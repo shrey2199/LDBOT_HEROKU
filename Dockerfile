@@ -13,5 +13,3 @@ RUN apt-get update -y && \
 COPY . .
 
 RUN chmod +x start.sh
-
-RUN ./start.sh
