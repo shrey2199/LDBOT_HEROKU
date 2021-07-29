@@ -1,8 +1,11 @@
-FROM python:3
+FROM python:3.9.6-slim-buster
 
 WORKDIR /usr/src/app
 
-RUN apt install -y curl \ 
+RUN apt update -y && \    
+    apt install -y curl && \ 
+    apt install -y git && \
+    apt install -y gnupg && \
     apt install -y nodejs
 
 RUN npm install -g heroku
