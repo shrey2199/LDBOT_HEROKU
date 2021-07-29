@@ -1,0 +1,54 @@
+{
+    "name": "LD_Meta_bot",
+    "description": "A Telegram bot for rebuilding Libdrive Metadata",
+    "logo": "",
+    "keywords": [
+      "bot",
+      "telegram",
+      "python"
+    ],
+    "repository": "https://github.com/shrey2199/LD_Meta_bot",
+    "website": "https://github.com/shrey2199/LD_Meta_bot",
+    "success_url": "https://t.me/s_rawal",
+    "env": {
+      
+      "BOT_TOKEN": {
+        "description": "The telegram bot token that you get from @BotFather.",
+        "required": true
+      },
+      "SECRET": {
+        "description": "Your Libdrive Settings SECRET.",
+        "required": true
+      },
+      "LD_DOMAIN": {
+        "description": "Your Libdrive Domain without https:// or http://",
+        "required": true
+      },
+      "ADMIN_IDS": {
+        "description": "The Telegram User ID of the Owner of the Bot. Get it by using /info in @MissRose_bot.",
+        "required": false
+      },
+      "PIC": {
+        "description": "The Picture You want to appear when start command is used.",
+        "required": false
+      },
+      "HEROKU_APP_NAME": {
+        "description": "The Name Of Heroku Lidrive App.",
+        "required": false
+      },
+      "HEROKU_API_KEY": {
+        "description": "The API Key of Heroku Account where Libdrive is set up.",
+        "required": false
+      },
+      "HEROKU_EMAIL": {
+        "description": "The Email ID of Heroku Account where Libdrive is set up.",
+        "required": false
+      }
+    },
+    "formation": {
+            "worker": {
+                "quantity": 1,
+                "size": "free"
+            }
+      }
+}
