@@ -1,4 +1,4 @@
-FROM python:3.9.6-slim-buster
+FROM ubuntu:20
 
 WORKDIR /usr/src/app
 
