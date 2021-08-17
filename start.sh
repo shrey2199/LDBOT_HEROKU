@@ -1,7 +1,6 @@
 cd /usr/src/app
 
 git clone https://github.com/shrey2199/LD_Meta_bot.git
-cp LD_Meta_bot/netrc_sample ~/.netrc
 cp -r LD_Meta_bot/helpers/ .
 cp -r LD_Meta_bot/bot.py .
 cp -r LD_Meta_bot/config.py .
