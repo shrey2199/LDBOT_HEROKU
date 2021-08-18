@@ -31,10 +31,6 @@ And then run the bot by
 
 ## Deploy with Docker
 
-### Two Methods
-
-#### Method 1
-
 Edit config.py with variables listed below !
 
 Build Docker Image.. 
@@ -45,61 +41,61 @@ Run Docker Container..
 
     docker run --name libdrivebot libdrivebot
 
-#### Method 2
-
-Build Docker Image ..
-
-    docker build . -t libdrivebot
-
-Run The Docker Container and Define the Variables in One Command
-
-    docker run --name libdrivebot -e BOT_TOKEN="<your_bot_token>" -e LD_DOMAIN="<your_libdrive_domain>" -e SECRET="<your_libdrive_secret>" -e ADMIN_IDS="<chat_ids>" -e PIC="<picture_url>" -d libdrivebot
-
 ## Variables
 
 - `BOT_TOKEN`
   - Values :- Valid BOT TOKEN Obtained from Botfather.
-  - Default Value :- `"XXXXXXXXX:ABCDEFGHIJKLMNOPQRST"`
+  - Example Value :- `XXXXXXXXX:ABCDEFGHIJKLMNOPQRST`
   - Use :- To connect to Telegram as BOT.
 
 - `LD_DOMAIN`
   - Values :- Domain of LibDrive Server.
-  - Default Value :- `<appname>.herokuapp.com`
+  - Example Value :- `<appname>.herokuapp.com`
     - Enter The Domain without the Protocols `https://` or `http://`
     - Don't enter a `/` in the end of The Domain.
   - Use :- To connect to Libdrive.
 
 - `SECRET`
   - Values :- Secret of LibDrive Server Settings - The Secret Key set in LibDrive Config.
-  - Default Value :- `""`
   - Use :- To connect to Libdrive.
 
 - `PIC`
   - Values :- The Picture You want to appear when start command is used.
-  - Default Value :- `""`
+  - Example Value :- `https://example.com/example.png`
   - Use :- Send Photo with `/start` command.
 
 - `ADMIN_IDS`
-  - Values :- It is a list of IDs of all the allowed groups and useres who can use this bot in private. 
-    - To supply multiple IDs in config.py seperate by comma ','. 
+  - Values :- It is a list of IDs of all the allowed users who can use this bot in private. (Get it from [Miss Rose Bot](t.me/missrose_bot))
+    - To supply multiple IDs in config.py seperate by spaces. 
     - To supply multiple IDs from Environemnt variable (Heroku & Docker) seperate by spaces.
-  - Default Value :- `[]` 
-  - Use :- Users and groups with ids here can use the bot.
+  - Example Value :- `Numerical Value` 
+  - Use :- Users with ids here can use the bot.
+
+- `GROUP_IDS`
+  - Values :- It is a list of IDs of all the allowed groups whose users can use this bot. 
+    - To supply multiple IDs in config.py seperate by spaces. 
+    - To supply multiple IDs from Environemnt variable (Heroku & Docker) seperate by spaces.
+    - Group IDs should start with `-100`
+  - Default Value :- `-100XXXXXXXXX` 
+  - Use :- Groups with ids here can use the bot.
 
 - `HEROKU_APP_NAME`
-  - Values :- The Name of Your Heroku App.
-  - Default Value :- `""`
+  - Values :- The Name of Your LibDrive Heroku App.
   - Use :- To Use `/hrestart` and `/hdyno` command.
 
 - `HEROKU_API_KEY`
-  - Values :- The API KEY of Your Heroku Account.
-  - Default Value :- `""`
+  - Values :- The API KEY of Your LibDrive Heroku Account.
   - Use :- To Use `/hrestart` and `/hdyno` command.
 
-- `HEROKU_EMAIL`
-  - Values :- The Email ID of Your Heroku Account.
-  - Default Value :- `""`
-  - Use :- To Use `/hrestart` and `/hdyno` command.
+- `BOT_USERNAME`
+  - Values :- The Username of Your Bot without `@`.
+  - Use :- To Use the Bot in Groups.
+
+- `GROUP_CMDS`
+  - Values :- The Commands Usable in Groups where Your Bot is Added.
+  - Example Value :- `search find m3u8`
+    - Seperate Commands with Spaces.
+  - Use :- To Use the Bot in Groups.
 
 ## Bot Commands
 
@@ -111,6 +107,7 @@ Run The Docker Container and Define the Variables in One Command
 
     start - To Start The Bot.
     help - To Get Help about Using the Bot.
+    grouphelp - To Get Commands Available when Added in Group.
     restart - To Restart LibdDrive Server.
     rebuild - To Rebuild the Metadata of your Libdrive.
     fixconfig - To Fix LibDrive Config.
@@ -132,7 +129,9 @@ Run The Docker Container and Define the Variables in One Command
     setui - To change The UI Settings of your Libdrive.
     hrestart - Restart Heroku Dynos.(Heroku Only)
     hdyno - Get Heroku Dyno Stats.(Heroku Only)
-    search - To Search Your LibDrive.
+    search - To Search Your LibDrive (Direct Download Links).
+    find - To Search Your LibDrive (View Online Links).
+    m3u8 - To get m3u8 Playlists. (Incomplete)
     speedtest - To Perform a Speedtest on the Server. (Completely Irrelevant 😂)
 
 ## Credits
